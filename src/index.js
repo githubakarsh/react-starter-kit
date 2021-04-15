@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './main.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import getAppContent from './utils/contentFetcher';
+
+const root = document.getElementById('root');
+
+const renderer = (comp) => {
+  return ReactDOM.render(
+    comp,
+    root
+  );
+}
+
+(async () => {
+  try {
+    const appContent = await getAppContent();
+    renderer(<StrictMode><Router><App content={appContent}/></Router></StrictMode>);
+  }catch (err) {
+    console.log(err)
+    renderer(<div>There is some problem</div>);
+  }
+})();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

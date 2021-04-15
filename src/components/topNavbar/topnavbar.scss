@@ -1,0 +1,38 @@
+.header-main {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid lightgray;
+    justify-content: space-between;
+}
+
+.topnavbar-logo {
+    margin-left: 20px;
+}
+
+.topnavbar-title {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 29px;
+    margin-left: -787px;
+}
+.nav-main {
+    margin-left: 60px;
+    margin-right: 30px;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    padding-top: 4px;
+    font-size: 18px;
+    box-sizing: border-box;
+    li {
+        margin-left: 20px;
+        a {
+            text-decoration: none;
+            color: black;
+
+        }
+    }
+}
