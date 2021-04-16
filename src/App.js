@@ -1,14 +1,18 @@
 
 import Router from './appRouter/Router';
 import TopNavbar from './components/topNavbar/TopNavBar';
-import {useState} from 'react';
+import { useContext } from 'react';
+import { AppContext } from './context/AppContext';
 
-const App = () => {
+
+const App = (authed) => {
+  const appContext = useContext(AppContext);
+  console.log(appContext, "here in app");
   return (
-    <div >
-      <TopNavbar authed={true}/>
-      <Router authed={true}/>
-    </div>
+     <div>
+        <TopNavbar authed={authed}/>
+      <Router authed={authed}/>
+        </div>
   );
 }
 

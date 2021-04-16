@@ -6,7 +6,7 @@ const Router = ({
     authed
 }) => {
     return <Switch>
-        <Route component={<LoginPage />} path="/login"/>
+        <Route component={LoginPage} path="/login"/>
         <AuthenticatedRoute component={() => <div>Home</div>} path="/" exact authed={authed}/>
         <AuthenticatedRoute component={() => <div>About us</div>} path="/aboutus" authed={authed}/>
         <AuthenticatedRoute component={() => <div>Contact us</div>} path="/contactus" authed={authed}/>

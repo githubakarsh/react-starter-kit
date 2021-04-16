@@ -2,6 +2,10 @@
     display: flex;
     width: 100%;
     border-bottom: 2px solid lightgray;
+
+    @media screen and (max-width: 768px) {
+        width: 1000px;
+    }
 }
 
 .topnavbar-logo {
