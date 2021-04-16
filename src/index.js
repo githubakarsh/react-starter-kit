@@ -22,7 +22,7 @@ const renderer = (comp) => {
     renderer(<StrictMode><Router><App content={appContent}/></Router></StrictMode>);
   }catch (err) {
     console.log(err)
-    renderer(<div>There is some problem</div>);
+    renderer(<div>There is some problem {err}</div>);
   }
 })();
 

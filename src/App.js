@@ -1,12 +1,13 @@
 
 import Router from './appRouter/Router';
 import TopNavbar from './components/topNavbar/TopNavBar';
+import {useState} from 'react';
 
-function App() {
+const App = () => {
   return (
     <div >
-      <TopNavbar />
-      <Router />
+      <TopNavbar authed={true}/>
+      <Router authed={true}/>
     </div>
   );
 }
